@@ -18,6 +18,7 @@ import org.junit.Test;
 public class CommandPatternTest
 {
     IApp app ;
+    PinEntryMachine pinEntryMachine;
     
     /**
      * Default constructor for test class CommandPatternTest
@@ -35,6 +36,7 @@ public class CommandPatternTest
     public void setUp()
     {
         app = new AppAuthProxy() ;
+        pinEntryMachine = new PinEntryMachine();
     }
 
 
@@ -42,10 +44,18 @@ public class CommandPatternTest
     public void testMyCards()
     {
         // Login with pin
+        IApp app = new AppAuthProxy() ;
+        app.display() ;
+        app.touch(1,5) ;
+        app.touch(2,5) ;
+        app.touch(3,5) ;
+        app.touch(1,6) ;
+        app.display() ;
 
         // Select Menu "A"
  
         // Assertion
+
         assertEquals("MyCards", app.screen());            
     }
 
@@ -53,11 +63,21 @@ public class CommandPatternTest
     public void testPayments()
     {
         // Login with pin
-
+        IApp app = new AppAuthProxy() ;
+        app.display() ;
+        app.touch(1,5) ;
+        app.touch(2,5) ;
+        app.touch(3,5) ;
+        app.touch(1,6) ;
+        app.display() ;
+        app.execute("B");
+//        app.touch(2,7) ;
+        app.display() ;
         // Select Menu "B"
- 
+//        app.
+
         // Assertion
-        assertEquals("Payments", app.screen());            
+        assertEquals("Payments", app.screen());
     }
 
   @Test
