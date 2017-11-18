@@ -10,5 +10,8 @@ public class MyCards extends Screen
        
     }
 
-   
+    @Override
+    public String name() {
+        return "MyCards";
+    }
 }
