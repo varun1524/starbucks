@@ -44,7 +44,7 @@ public class CommandPatternTest
     public void testMyCards()
     {
         // Login with pin
-        IApp app = new AppAuthProxy() ;
+//        IApp app = new AppAuthProxy() ;
         app.display() ;
         app.touch(1,5) ;
         app.touch(2,5) ;
@@ -63,7 +63,7 @@ public class CommandPatternTest
     public void testPayments()
     {
         // Login with pin
-        IApp app = new AppAuthProxy() ;
+//        IApp app = new AppAuthProxy() ;
         app.display() ;
         app.touch(1,5) ;
         app.touch(2,5) ;
@@ -85,7 +85,15 @@ public class CommandPatternTest
     {
         assertEquals("PinScreen", app.screen());
         // Login with pin
-
+        app.display() ;
+        app.touch(1,5) ;
+        app.touch(2,5) ;
+        app.touch(3,5) ;
+        app.touch(1,6) ;
+        app.display() ;
+        app.execute("C");
+//        app.touch(2,7) ;
+        app.display() ;
         // Select Menu "C"
  
         // Assertion 
@@ -96,7 +104,15 @@ public class CommandPatternTest
     public void testStore()
     {
         // Login with pin
-
+        app.display() ;
+        app.touch(1,5) ;
+        app.touch(2,5) ;
+        app.touch(3,5) ;
+        app.touch(1,6) ;
+        app.display() ;
+        app.execute("D");
+//        app.touch(2,7) ;
+        app.display() ;
         // Select Menu "D"
  
         // Assertion 
